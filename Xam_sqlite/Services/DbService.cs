@@ -144,6 +144,8 @@ namespace Xam_sqlite.Services
             try
             {
                 await connection.CreateTableAsync<T>();
+                
+
                 return true;
             }
             catch (SQLiteException ex)
@@ -220,8 +222,10 @@ namespace Xam_sqlite.Services
         {
             try
             {
-                await CreateTable<ToDoItemModel>();
-             
+                await  CreateTable<ToDoItemModel>();
+                
+
+
                 return true;
             }
             catch (Exception ex)

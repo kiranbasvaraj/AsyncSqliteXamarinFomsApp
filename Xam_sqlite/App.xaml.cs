@@ -11,7 +11,8 @@ namespace Xam_sqlite
         {
             InitializeComponent();
 
-            DbService.Instance.CreateAppTables();
+            // DbService.Instance.CreateAppTables();
+          
             MainPage = new NavigationPage(new HomePage());
 
         }

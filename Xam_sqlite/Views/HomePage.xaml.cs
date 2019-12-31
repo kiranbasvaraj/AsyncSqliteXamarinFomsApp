@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,14 +31,26 @@ namespace Xam_sqlite.Views
 
         private async void ToolbarItem_Clicked(object sender, EventArgs e)
         {
-            await DbService.Instance.CreateAppTables();
+            //   await DbService.Instance.CreateAppTables();
+            await DbService.Instance.CreateTable<ToDoItemModel>();
+            await DbService.Instance.CreateTable<Demo>();
+
         }
 
         protected async override void OnAppearing()
         {
-            base.OnAppearing();
-            var x = await DbService.Instance.GetAllWithChildren<ToDoItemModel>();
-            listview.ItemsSource = x;
+            try
+            {
+                base.OnAppearing();
+            
+                var x = await DbService.Instance.GetAllWithChildren<ToDoItemModel>();
+                listview.ItemsSource = x;
+            }
+            catch (Exception ex)
+            {
+
+                Debug.WriteLine(ex.StackTrace);
+            }
         }
     }
 }

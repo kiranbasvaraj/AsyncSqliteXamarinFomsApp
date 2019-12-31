@@ -23,7 +23,16 @@ namespace Xam_sqlite.Views
             if (await DbService.Instance.InsertReplaceAsyncWithChildren(new ToDoItemModel()
             {
                 ItemName = E1.Text,
-                ItemDescription = E2.Text
+                ItemDescription = E2.Text,Demos=new List<Demo>() { new Demo() { DateTime=DateTime.Now,Address="Address1"},
+                new Demo() { DateTime=DateTime.Now,Address="Address1"},
+                new Demo() { DateTime=DateTime.Now,Address="Address1"},
+                new Demo() { DateTime=DateTime.Now,Address="Address1"},
+                new Demo() { DateTime=DateTime.Now,Address="Address1"},
+                new Demo() { DateTime=DateTime.Now,Address="Address1"},
+                new Demo() { DateTime=DateTime.Now,Address="Address1"},
+                new Demo() { DateTime=DateTime.Now,Address="Address1"},
+                new Demo() { DateTime=DateTime.Now,Address="Address1"},
+                new Demo() { DateTime=DateTime.Now,Address="Address1"}}
             }))
             {
                 await DisplayAlert(E1.Text, "Success!", "ok");
