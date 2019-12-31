@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Temp="clr-namespace:Xam_sqlite.Views.Templates"
+             mc:Ignorable="d"
+             x:Class="Xam_sqlite.Views.HomePage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="AddItemClicked">
+            </ToolbarItem>
+        <ToolbarItem Text="RefreshTables" Clicked="ToolbarItem_Clicked">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView HasUnevenRows="True" x:Name="listview" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Temp:ToDoTemplate/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

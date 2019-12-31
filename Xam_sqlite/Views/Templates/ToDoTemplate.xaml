@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Xam_sqlite.Views.Templates.ToDoTemplate">
+  <ContentView.Content>
+        <Frame Padding="2">
+            <StackLayout>
+                <StackLayout Padding="10">
+                    <Label Text="{Binding ItemName}" FontSize="Large"></Label>
+                    <Label Text="{Binding ItemDescription}" FontSize="Medium"></Label>
+                </StackLayout>
+                <Label Text="Delete">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="onDeleteTapped"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>
